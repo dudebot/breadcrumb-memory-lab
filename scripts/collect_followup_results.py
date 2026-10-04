@@ -41,14 +41,14 @@ def main():
                 raise ValueError(f"Source changed since neural evaluation: {name}")
     for path, result in outputs.items():
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+        path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8", newline="\n")
     sources = [Path(p) for p in ("breadcrumb_memory/step_memory.py", "tests/test_step_memory.py",
                                 "breadcrumb_memory/lm_probe.py", "scripts/collect_followup_results.py")]
     manifest = {
         "note": "Hashes at collection. Neural reports separately record evaluation source hashes; CPU hashes identify the reviewed implementation.",
         "sha256": {p.as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in [*outputs, *sources]},
     }
-    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(f"Collected {len(outputs)} reports plus manifest")
 
 
