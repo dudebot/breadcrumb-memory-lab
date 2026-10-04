@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "config": {
+    "seed": 29,
+    "n_keys": 128,
+    "n_values": 32,
+    "teacher_dim": 64,
+    "key_dim": 16,
+    "slots": 8,
+    "chunk_size": 4,
+    "fast_window": 8,
+    "batch_size": 64,
+    "teacher_steps": 100,
+    "student_steps": 600,
+    "learning_rate": 0.01,
+    "train_lengths": [
+      16,
+      24,
+      32,
+      40
+    ],
+    "eval_lengths": [
+      24,
+      40,
+      64,
+      96
+    ],
+    "eval_examples": 512,
+    "max_minutes": 10
+  },
+  "device": "cuda",
+  "source_sha256": {
+    "__init__.py": "86890392df2653cd143087c7c9a45ccaab478c7185c9a8ba9720355d19b753db",
+    "__main__.py": "81fe5ebdbc7f82da3b70cd9f50e7a99e2ce26ed4803e786f0ea18a06464b5156",
+    "data.py": "fad872465aea29ed179eb3d9b57bd14850ffaf954f689f4dd231ac995acc4c4a",
+    "demo.py": "0c3039803c04f517ba4f8d3f813d439d164438fd3d282659c96fcfb50ddb762b",
+    "experiment.py": "7864b73313d434784012ccca437f7faf4c2e09b1ac870164092d54b8e20dbac2",
+    "models.py": "f23f8393085ceaf07652e76328b2dc303d8329e235b4f8a071efe5c37e4a31a5"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Windows",
+    "torch": "2.7.1+cu128",
+    "cuda_runtime": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "free_vram_bytes": 15645802496,
+    "total_vram_bytes": 17094475776,
+    "capability": [
+      12,
+      0
+    ],
+    "cuda_forward_backward_passed": true
+  },
+  "completed_student_steps": 600,
+  "slow_state_bytes_per_episode": 16384,
+  "peak_cuda_allocated_bytes": 22465024,
+  "elapsed_seconds": 10.166844400111586,
+  "teacher_parameters": 8193,
+  "student_parameters": 2049,
+  "before": [
+    {
+      "length": 24,
+      "query_mode": "old",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 0.03515625,
+        "student": 0.943359375,
+        "no_memory": 0.025390625,
+        "shuffled": 0.037109375,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.9198381044010008,
+        0.9602770317183041
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.943359375,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.6875653937458992,
+      "student_nll": 0.6894866526126862,
+      "evaluation_seconds_all_controls": 0.08474510000087321
+    },
+    {
+      "length": 40,
+      "query_mode": "old",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 0.0234375,
+        "student": 0.888671875,
+        "no_memory": 0.037109375,
+        "shuffled": 0.025390625,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.8584796178732639,
+        0.9130750609273601
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.888671875,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.8178087472915649,
+      "student_nll": 0.8209873139858246,
+      "evaluation_seconds_all_controls": 0.06544570019468665
+    },
+    {
+      "length": 64,
+      "query_mode": "old",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 0.021484375,
+        "student": 0.537109375,
+        "no_memory": 0.03125,
+        "shuffled": 0.021484375,
+        "exact_archive": 1.0,
+        "exact_retained": 0.599609375
+      },
+      "student_wilson95": [
+        0.4938024118851597,
+        0.579863612723945
+      ],
+      "support_retained_fraction": 0.599609375,
+      "accuracy_when_retained": 0.8859934853420195,
+      "accuracy_when_lost": 0.014634146341463415,
+      "teacher_student_kl": 2.1558103412389755,
+      "student_nll": 2.1618812084198,
+      "evaluation_seconds_all_controls": 0.08992210007272661
+    },
+    {
+      "length": 96,
+      "query_mode": "old",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 0.025390625,
+        "student": 0.3125,
+        "no_memory": 0.03515625,
+        "shuffled": 0.037109375,
+        "exact_archive": 1.0,
+        "exact_retained": 0.3359375
+      },
+      "student_wilson95": [
+        0.27387206162772615,
+        0.3539206561367969
+      ],
+      "support_retained_fraction": 0.3359375,
+      "accuracy_when_retained": 0.8837209302325582,
+      "accuracy_when_lost": 0.023529411764705882,
+      "teacher_student_kl": 3.064405709505081,
+      "student_nll": 3.074438840150833,
+      "evaluation_seconds_all_controls": 0.12369690020568669
+    },
+    {
+      "length": 24,
+      "query_mode": "recent",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 1.0,
+        "student": 0.955078125,
+        "no_memory": 0.99609375,
+        "shuffled": 0.880859375,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.9334955903063304,
+        0.9698825009526917
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.955078125,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.6975981816649437,
+      "student_nll": 0.6995280906558037,
+      "evaluation_seconds_all_controls": 0.05414449982345104
+    },
+    {
+      "length": 40,
+      "query_mode": "recent",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 1.0,
+        "student": 0.88671875,
+        "no_memory": 0.99609375,
+        "shuffled": 0.78515625,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.856336760269959,
+        0.9113407593407123
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.88671875,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.8354666158556938,
+      "student_nll": 0.8386266157031059,
+      "evaluation_seconds_all_controls": 0.06561639998108149
+    },
+    {
+      "length": 64,
+      "query_mode": "recent",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 1.0,
+        "student": 0.84765625,
+        "no_memory": 1.0,
+        "shuffled": 0.7890625,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.813947967766721,
+        0.8761863680448925
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.84765625,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.8783827498555183,
+      "student_nll": 0.8833404704928398,
+      "evaluation_seconds_all_controls": 0.09816470020450652
+    },
+    {
+      "length": 96,
+      "query_mode": "recent",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 1.0,
+        "student": 0.8828125,
+        "no_memory": 0.998046875,
+        "shuffled": 0.779296875,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.8520585622567599,
+        0.9078646389740056
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.8828125,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.8220328316092491,
+      "student_nll": 0.8291945531964302,
+      "evaluation_seconds_all_controls": 0.12613250012509525
+    }
+  ],
+  "after": [
+    {
+      "length": 24,
+      "query_mode": "old",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 0.03515625,
+        "student": 0.970703125,
+        "no_memory": 0.02734375,
+        "shuffled": 0.03125,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.9522284746762163,
+        0.9821668901024291
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.970703125,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.11785493697971106,
+      "student_nll": 0.1177752623334527,
+      "evaluation_seconds_all_controls": 0.05010670004412532
+    },
+    {
+      "length": 40,
+      "query_mode": "old",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 0.0234375,
+        "student": 0.91796875,
+        "no_memory": 0.033203125,
+        "shuffled": 0.03125,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.8909712567854289,
+        0.9387408098644885
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.91796875,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.24505576863884926,
+      "student_nll": 0.24490045569837093,
+      "evaluation_seconds_all_controls": 0.067469900008291
+    },
+    {
+      "length": 64,
+      "query_mode": "old",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 0.021484375,
+        "student": 0.56640625,
+        "no_memory": 0.021484375,
+        "shuffled": 0.0234375,
+        "exact_archive": 1.0,
+        "exact_retained": 0.599609375
+      },
+      "student_wilson95": [
+        0.5231423758711392,
+        0.6086810365872589
+      ],
+      "support_retained_fraction": 0.599609375,
+      "accuracy_when_retained": 0.9283387622149837,
+      "accuracy_when_lost": 0.024390243902439025,
+      "teacher_student_kl": 3.0811363756656647,
+      "student_nll": 3.0839634835720062,
+      "evaluation_seconds_all_controls": 0.09635960008017719
+    },
+    {
+      "length": 96,
+      "query_mode": "old",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 0.025390625,
+        "student": 0.322265625,
+        "no_memory": 0.044921875,
+        "shuffled": 0.046875,
+        "exact_archive": 1.0,
+        "exact_retained": 0.3359375
+      },
+      "student_wilson95": [
+        0.2832369463477183,
+        0.3639415673665692
+      ],
+      "support_retained_fraction": 0.3359375,
+      "accuracy_when_retained": 0.9127906976744186,
+      "accuracy_when_lost": 0.023529411764705882,
+      "teacher_student_kl": 5.024847447872162,
+      "student_nll": 5.03217625617981,
+      "evaluation_seconds_all_controls": 0.12058140011504292
+    },
+    {
+      "length": 24,
+      "query_mode": "recent",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 1.0,
+        "student": 0.966796875,
+        "no_memory": 0.99609375,
+        "shuffled": 0.896484375,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.9474729142970058,
+        0.9791681321017338
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.966796875,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.114536436740309,
+      "student_nll": 0.11451745545491576,
+      "evaluation_seconds_all_controls": 0.04993600002489984
+    },
+    {
+      "length": 40,
+      "query_mode": "recent",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 1.0,
+        "student": 0.908203125,
+        "no_memory": 1.0,
+        "shuffled": 0.8203125,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.8800609421187955,
+        0.9302653285813576
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.908203125,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.2388439755886793,
+      "student_nll": 0.23866091668605804,
+      "evaluation_seconds_all_controls": 0.06558880000375211
+    },
+    {
+      "length": 64,
+      "query_mode": "recent",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 1.0,
+        "student": 0.916015625,
+        "no_memory": 1.0,
+        "shuffled": 0.791015625,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.8887819435638339,
+        0.9370529638961306
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.916015625,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.3190692123025656,
+      "student_nll": 0.3187038730829954,
+      "evaluation_seconds_all_controls": 0.09169250004924834
+    },
+    {
+      "length": 96,
+      "query_mode": "recent",
+      "examples": 512,
+      "accuracy": {
+        "teacher": 1.0,
+        "recent_teacher": 1.0,
+        "student": 0.91015625,
+        "no_memory": 0.998046875,
+        "shuffled": 0.8203125,
+        "exact_archive": 1.0,
+        "exact_retained": 1.0
+      },
+      "student_wilson95": [
+        0.8822359677456094,
+        0.9319674621444963
+      ],
+      "support_retained_fraction": 1.0,
+      "accuracy_when_retained": 0.91015625,
+      "accuracy_when_lost": null,
+      "teacher_student_kl": 0.2426342163234949,
+      "student_nll": 0.241733162663877,
+      "evaluation_seconds_all_controls": 0.12588889990001917
+    }
+  ],
+  "git_commit": null
+}

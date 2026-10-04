@@ -1,0 +1,18 @@
+{
+  "seed": 17,
+  "n_keys": 128,
+  "n_values": 32,
+  "teacher_dim": 64,
+  "key_dim": 16,
+  "slots": 8,
+  "chunk_size": 4,
+  "fast_window": 8,
+  "batch_size": 64,
+  "teacher_steps": 100,
+  "student_steps": 600,
+  "learning_rate": 0.01,
+  "train_lengths": [16, 24, 32, 40],
+  "eval_lengths": [24, 40, 64, 96],
+  "eval_examples": 512,
+  "max_minutes": 10
+}

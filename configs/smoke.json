@@ -1,0 +1,9 @@
+{
+  "teacher_steps": 5,
+  "student_steps": 5,
+  "batch_size": 8,
+  "eval_examples": 16,
+  "train_lengths": [16, 24],
+  "eval_lengths": [24, 64],
+  "max_minutes": 2
+}

@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "breadcrumb-memory-lab"
+version = "0.1.0"
+description = "A bounded synthetic laboratory for learned memory and context distillation"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.7,<3"]
+
+[tool.setuptools.packages.find]
+include = ["breadcrumb_memory*"]
