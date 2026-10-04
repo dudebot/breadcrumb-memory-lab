@@ -1,5 +1,11 @@
 # Small language-model experiment
 
+**Follow-up correction to interpretation:** the saved adapters were subsequently
+tested on both objects before and after swapping their colors. Neither completed
+all four answers in any of 256 cases, while full text passed 212. The original gain
+therefore does not establish reliable bindings. See [FOLLOWUP_RESULTS.md](FOLLOWUP_RESULTS.md)
+for the stronger controls; the original measurements below remain unchanged.
+
 ## What was run
 
 Backbone: `HuggingFaceTB/SmolLM2-135M-Instruct`, pinned to `12fd25f77366fa6b3b4b768ec3050bf629380bac`. All 134,515,008 backbone parameters were frozen. Only a 216,128-parameter compressor was trained.

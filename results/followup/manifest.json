@@ -1,0 +1,15 @@
+{
+  "note": "Hashes at collection. Neural reports separately record evaluation source hashes; CPU hashes identify the reviewed implementation.",
+  "sha256": {
+    "results/followup/binding-smollm.json": "7a35b2c1ef479244ce33b47b25db8d6e3bfb8c5029b030c9e405ca9bd73c55bb",
+    "results/followup/binding-gpt2.json": "8b74bb1d81542b6f7189f4772e384aedcb484308e440d925770fae6dfc59b93e",
+    "results/followup/gpt2-probe.json": "3d9584610293f5d68750335b2bce3f0d7320ca47ac3275a8649beb820b8b36b1",
+    "results/step-memory/seed-17.json": "015ca5b74ed57a319b8714f60476c2b310b05abd5068065f8e0c7ff6e03e16d5",
+    "results/step-memory/seed-29.json": "b83cc844802561610f37eb984d5fe3b0489316e183fc49a423631973a7cc60a0",
+    "results/step-memory/seed-43.json": "451ac712342bc5b89c4be368c2a8261ebe88916f37373abb6b43541a988d939e",
+    "breadcrumb_memory/step_memory.py": "d103ebdd579d7e2790ecaf84122ae387020402fd54586f94d310321d6a29d700",
+    "tests/test_step_memory.py": "24dcb080064a8da5e640342d796d26399030be5af28d7a12ebc0b622b960d4bd",
+    "breadcrumb_memory/lm_probe.py": "0eb3fff06c6a7b67b5788236e1e6c3009da49d497085bbbecd02a4b8413f88c8",
+    "scripts/collect_followup_results.py": "320da2df11a445191007bdeccf5750ce30032c1edf9d539a3c8bbb7c3b0e9c56"
+  }
+}

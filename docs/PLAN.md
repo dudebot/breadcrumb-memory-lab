@@ -7,7 +7,7 @@ Investigate learned memory on one personal GPU without creating an ongoing opera
 1. **Internal compression:** a bounded latent state preserves information useful for future predictions without consulting an archive.
 2. **Selective refresh:** a bounded latent state helps locate and recover evidence from an external archive when needed.
 
-The current pilot is an elementary instance of the first. The second is a separate experiment and must include archive storage, search and read costs. Neither implies an unbounded lossless memory in a finite state.
+The neural pilot is an elementary instance of the first. A separate scripted double-ring harness now tests the second, including archive/index storage and read costs. Its cues and policy are not learned. Neither implies an unbounded lossless memory in a finite state. See [follow-up results](FOLLOWUP_RESULTS.md).
 
 ## Stage 0 — establish correct measurement (implemented)
 
@@ -41,6 +41,12 @@ Time budget: a bounded local work session with a fixed experiment list, not a la
 
 An initial `lm_memory` experiment now uses frozen SmolLM2-135M-Instruct plus a learned four-vector compressor, on four-fact color recall. It is a single-prefix test, not yet a recurrent writer or the full benchmark below. The backbone remains frozen, and training targets are full-vocabulary teacher distributions. See LM_RESULTS.md for measured outcomes and constraints. The proposed breadth, repeated updates and efficiency controls below remain outstanding.
 
+The subsequent binding quartet test failed for both trained adapters despite a
+competent full-text teacher. The next priority is a structured writer and
+query-conditioned read, tested against assignment-erased controls with fresh
+evaluation seeds. Scaling the backbone is deferred. GPT-2 ran locally but was a
+weaker teacher on the sentence task; mapping-format probes were exploratory.
+
 Choose a 100–500M causal language model with accessible weights, documented licensing, standard PyTorch support and a demonstrated ability to solve the test prompts. Pin model revision and tokenizer. Confirm the full-context teacher solves the tasks **before** interpreting a compressed student's loss.
 
 Start with teacher context 512–2,048 tokens, recent student context 128–256 tokens, batch size one and a very small memory adapter. Profile before scaling. Frozen base weights reduce optimizer storage but gradients through frozen layers still have an activation cost. Avoid custom kernels initially; do not assume an H100 recipe works on a desktop Blackwell GPU.
@@ -55,7 +61,14 @@ The first bridge run logged timing every 50 steps and completed 1,000 steps unde
 
 A negative result here could reflect an inadequate interface, teacher or training procedure. Report which control failed instead of concluding that all compressed memory is impossible.
 
-## Stage 3 — breadcrumbs that trigger retrieval (not implemented)
+## Stage 3 — breadcrumbs that trigger retrieval (scripted baseline implemented)
+
+`step_memory` implements two overwriting rings, causal step refresh, matched
+logical byte ceilings, one-read caps, observed corrections and an exact-index
+baseline. Three seeds with opaque keys are published. The strict timing stratum
+matches actual reads; other strata expose wasted fetches and forgetting. Learned
+keys/triggers, real latency measurements and multiple queries per episode remain
+unimplemented. See STEP_MEMORY_DESIGN.md for the precise scope.
 
 Keep an immutable archive of historical evidence on disk. A learned breadcrumb writer must encode useful retrieval cues before the future query exists. A reader ranks candidate chunks or emits an address; a refresh module feeds retrieved evidence or a learned representation into the active context.
 

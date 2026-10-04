@@ -4,7 +4,9 @@ A small local research sandbox for this question:
 
 > Can a fixed-size learned memory preserve useful information after it leaves a model's recent context, trained by comparison with a full-history teacher?
 
-**Status: runnable synthetic ring pilot plus a frozen 135M language-model memory experiment, tested on an RTX 5070 Ti 16 GB.** The original integer-pair pilot needs no model download. The optional language-model experiment downloads SmolLM2-135M-Instruct and trains a small context compressor. Neither experiment implements a complete agent memory system, reproduces TTCD, or establishes a novel architecture.
+**Status: three runnable experiments, tested locally on an RTX 5070 Ti 16 GB:** an integer-pair associative ring, a frozen 135M language-model compressor with strict binding tests and a GPT-2 comparison, and a CPU double-ring/step-refresh simulation. None implements a complete learned agent memory system, reproduces TTCD, or establishes a novel architecture.
+
+**Latest finding:** the learned compressor's earlier accuracy gain does not demonstrate reliable object/color binding: neither trained adapter passed a complete four-question binding test. Separately, the scripted double ring extends recall using archived evidence, and early cues can move retrieval before a question arrives. See [the follow-up results](docs/FOLLOWUP_RESULTS.md) for the controls, failure cases and next experiment.
 
 The initial request was for a low-maintenance experiment that can run on a personal GPU. The research direction is interesting enough to measure; this repository deliberately makes the first measurement inexpensive. See [the research plan](docs/PLAN.md) for what remains before a language-model claim.
 
@@ -118,6 +120,24 @@ Before training, the full-context teacher must achieve at least 90% correct raw 
 
 For a different model, supply both `--model` and its matching `--revision`; the defaults pin SmolLM2. Model weights and trained adapters stay out of Git.
 
+## Run the double circular buffer and step-refresh lab
+
+This independent CPU simulation needs no pretrained model. It uses a bounded ring
+of raw records, a second bounded ring of compact addresses, and a growing archive.
+Refresh happens at simulated step boundaries using only information already
+available, or after the question. It includes delayed/absent cues, changed tasks,
+corrections, expired pointers, a single-ring comparison and ordinary indexed
+lookup. Both rings really wrap.
+
+```powershell
+.\.venv\Scripts\python.exe -m breadcrumb_memory.step_memory --output runs/step-memory --episodes 1000 --seed 17
+```
+
+Read [the design and accounting](docs/STEP_MEMORY_DESIGN.md). This tests scripted
+storage and scheduling, not learned cues, asynchronous execution, real agent tools,
+or hidden behavior behind an assistant's progress messages. The neural quartet
+evaluation and GPT-2 commands are in [the follow-up report](docs/FOLLOWUP_RESULTS.md).
+
 ## Relationship to prior work
 
 [TTCD (August 2026)](https://arxiv.org/abs/2608.01672) uses discrepancies between longer- and shorter-context computations to supervise fast-weight memory. We share that supervision motivation. Our tiny pilot writes into an explicit associative ring rather than performing TTCD's MLP updates, and does not reproduce its language-model results. The authors' [implementation](https://github.com/dangxingyu/ttcd) is a useful separate reference.
@@ -136,6 +156,8 @@ The future question is whether **learned, query-independent breadcrumbs plus sel
 - `docs/PLAN.md`: staged research plan and stop conditions.
 - `docs/EXPLAINER.md`: concrete examples of records, recall and the language-model follow-up.
 - `docs/LM_RESULTS.md`: measured small-language-model results and limitations.
+- `docs/FOLLOWUP_RESULTS.md`: binding failure, GPT-2 comparison, and reviewed double-ring results.
+- `docs/STEP_MEMORY_DESIGN.md`: simulated step refresh, controls and resource accounting.
 - `docs/INITIAL_RESULTS.md` and `results/initial/`: reviewed pilot results, not model checkpoints.
 - `runs/`: ignored local logs and checkpoints.
 

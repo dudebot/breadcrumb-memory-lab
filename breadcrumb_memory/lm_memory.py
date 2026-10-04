@@ -57,7 +57,7 @@ def batch(tokenizer, rng, size, records=4):
 def hidden(model, encoded):
     mask = encoded["attention_mask"]
     positions = (mask.cumsum(-1)-1).clamp_min(0)
-    return model.model(**encoded, position_ids=positions, use_cache=False).last_hidden_state
+    return model.base_model(**encoded, position_ids=positions, use_cache=False).last_hidden_state
 
 
 def next_logits(model, encoded):
@@ -69,7 +69,7 @@ def student_logits(model, memory, local):
     embeddings = torch.cat((memory, local_embeddings), dim=1)
     mask = torch.cat((torch.ones(memory.shape[:2], device=memory.device, dtype=local["attention_mask"].dtype), local["attention_mask"]), dim=1)
     positions = (mask.cumsum(-1)-1).clamp_min(0)
-    output = model.model(inputs_embeds=embeddings, attention_mask=mask, position_ids=positions, use_cache=False)
+    output = model.base_model(inputs_embeds=embeddings, attention_mask=mask, position_ids=positions, use_cache=False)
     return model.get_output_embeddings()(output.last_hidden_state[:, -1])
 
 

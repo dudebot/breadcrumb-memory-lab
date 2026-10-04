@@ -24,7 +24,11 @@ def main():
     if args.probe:
         (out/"probe-135m.json").write_text(args.probe.read_text(encoding="utf-8"), encoding="utf-8")
     first = results[0]
-    lines = ["# Small language-model experiment", "", "## What was run", "",
+    lines = ["# Small language-model experiment", "",
+             "Accuracy on this task alone does not establish object/color binding. "
+             "See [FOLLOWUP_RESULTS.md](FOLLOWUP_RESULTS.md) for the stricter quartet "
+             "evaluation of the original saved adapters and its negative result.", "",
+             "## What was run", "",
              f"Backbone: `{first['model']}`, pinned to `{first['revision']}`. "
              f"All {first['backbone_parameters']:,} backbone parameters were frozen. "
              f"Only a {first['trainable_parameters']:,}-parameter compressor was trained.", "",

@@ -1,0 +1,406 @@
+{
+  "model": "openai-community/gpt2",
+  "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "parameters": 124439808,
+  "test_seed": 34001,
+  "quartets": 256,
+  "elapsed_seconds": 3.117316599935293,
+  "peak_cuda_allocated_bytes": 585785344,
+  "source_sha256": {
+    "binding_eval.py": "6d99885c5d7b1df809083e5010d50d24fa6f84e91247afe80db6fb3cc3039bf9",
+    "lm_memory.py": "474ecf1bab89d00eb6baddee87cc627be3e64c9f40cbcede59549354a250a948",
+    "lm_probe.py": "0eb3fff06c6a7b67b5788236e1e6c3009da49d497085bbbecd02a4b8413f88c8"
+  },
+  "runs": [
+    {
+      "quartets": 256,
+      "answers": 1024,
+      "raw_next_token": {
+        "teacher": {
+          "per_answer": 0.5224609375,
+          "both_queries_within_history": 0.19921875,
+          "all_four": 0.02734375,
+          "both_assignments_for_same_query": 0.33203125,
+          "prediction_changes_after_swap": 0.5390625
+        },
+        "local": {
+          "per_answer": 0.1474609375,
+          "both_queries_within_history": 0.0,
+          "all_four": 0.0,
+          "both_assignments_for_same_query": 0.0,
+          "prediction_changes_after_swap": 0.0
+        }
+      },
+      "eight_color_choice": {
+        "teacher": {
+          "per_answer": 0.5224609375,
+          "both_queries_within_history": 0.19921875,
+          "all_four": 0.02734375,
+          "both_assignments_for_same_query": 0.33203125,
+          "prediction_changes_after_swap": 0.5390625
+        },
+        "local": {
+          "per_answer": 0.1474609375,
+          "both_queries_within_history": 0.0,
+          "all_four": 0.0,
+          "both_assignments_for_same_query": 0.0,
+          "prediction_changes_after_swap": 0.0
+        }
+      },
+      "teacher_all_four_correct_quartets": 7,
+      "raw_on_teacher_correct_quartets": {
+        "teacher": {
+          "per_answer": 1.0,
+          "both_queries_within_history": 1.0,
+          "all_four": 1.0,
+          "both_assignments_for_same_query": 1.0,
+          "prediction_changes_after_swap": 1.0
+        },
+        "local": {
+          "per_answer": 0.0714285746216774,
+          "both_queries_within_history": 0.0,
+          "all_four": 0.0,
+          "both_assignments_for_same_query": 0.0,
+          "prediction_changes_after_swap": 0.0
+        }
+      },
+      "symbolic_bag_baseline": {
+        "per_answer": 0.5,
+        "both_queries_within_history": 0.0,
+        "all_four": 0.0,
+        "both_assignments_for_same_query": 0.0,
+        "prediction_changes_after_swap": 0.0
+      },
+      "exact_symbolic_lookup": {
+        "per_answer": 1.0,
+        "both_queries_within_history": 1.0,
+        "all_four": 1.0,
+        "both_assignments_for_same_query": 1.0,
+        "prediction_changes_after_swap": 1.0
+      },
+      "samples": [
+        {
+          "original": [
+            [
+              "bucket",
+              "black"
+            ],
+            [
+              "box",
+              "purple"
+            ],
+            [
+              "coat",
+              "purple"
+            ],
+            [
+              "boat",
+              "white"
+            ]
+          ],
+          "swapped": [
+            [
+              "bucket",
+              "purple"
+            ],
+            [
+              "box",
+              "black"
+            ],
+            [
+              "coat",
+              "purple"
+            ],
+            [
+              "boat",
+              "white"
+            ]
+          ],
+          "blind": [
+            [
+              "bucket",
+              "black"
+            ],
+            [
+              "box",
+              "purple"
+            ],
+            [
+              "coat",
+              "purple"
+            ],
+            [
+              "boat",
+              "white"
+            ]
+          ],
+          "queries": [
+            "bucket",
+            "box"
+          ],
+          "answers": [
+            "black",
+            "purple",
+            "purple",
+            "black"
+          ],
+          "predicted_colors": {
+            "teacher": [
+              "black",
+              "black",
+              "purple",
+              "purple"
+            ],
+            "local": [
+              "blue",
+              "blue",
+              "blue",
+              "blue"
+            ]
+          }
+        },
+        {
+          "original": [
+            [
+              "ball",
+              "black"
+            ],
+            [
+              "pencil",
+              "purple"
+            ],
+            [
+              "cup",
+              "black"
+            ],
+            [
+              "box",
+              "blue"
+            ]
+          ],
+          "swapped": [
+            [
+              "ball",
+              "purple"
+            ],
+            [
+              "pencil",
+              "black"
+            ],
+            [
+              "cup",
+              "black"
+            ],
+            [
+              "box",
+              "blue"
+            ]
+          ],
+          "blind": [
+            [
+              "ball",
+              "black"
+            ],
+            [
+              "pencil",
+              "purple"
+            ],
+            [
+              "cup",
+              "black"
+            ],
+            [
+              "box",
+              "blue"
+            ]
+          ],
+          "queries": [
+            "ball",
+            "pencil"
+          ],
+          "answers": [
+            "black",
+            "purple",
+            "purple",
+            "black"
+          ],
+          "predicted_colors": {
+            "teacher": [
+              "black",
+              "black",
+              "blue",
+              "blue"
+            ],
+            "local": [
+              "blue",
+              "black",
+              "blue",
+              "black"
+            ]
+          }
+        },
+        {
+          "original": [
+            [
+              "ball",
+              "blue"
+            ],
+            [
+              "ribbon",
+              "green"
+            ],
+            [
+              "lantern",
+              "purple"
+            ],
+            [
+              "clock",
+              "black"
+            ]
+          ],
+          "swapped": [
+            [
+              "ball",
+              "green"
+            ],
+            [
+              "ribbon",
+              "blue"
+            ],
+            [
+              "lantern",
+              "purple"
+            ],
+            [
+              "clock",
+              "black"
+            ]
+          ],
+          "blind": [
+            [
+              "ball",
+              "blue"
+            ],
+            [
+              "ribbon",
+              "green"
+            ],
+            [
+              "lantern",
+              "purple"
+            ],
+            [
+              "clock",
+              "black"
+            ]
+          ],
+          "queries": [
+            "ball",
+            "ribbon"
+          ],
+          "answers": [
+            "blue",
+            "green",
+            "green",
+            "blue"
+          ],
+          "predicted_colors": {
+            "teacher": [
+              "blue",
+              "blue",
+              "blue",
+              "blue"
+            ],
+            "local": [
+              "blue",
+              "blue",
+              "blue",
+              "blue"
+            ]
+          }
+        },
+        {
+          "original": [
+            [
+              "bucket",
+              "purple"
+            ],
+            [
+              "bench",
+              "blue"
+            ],
+            [
+              "shirt",
+              "red"
+            ],
+            [
+              "notebook",
+              "red"
+            ]
+          ],
+          "swapped": [
+            [
+              "bucket",
+              "blue"
+            ],
+            [
+              "bench",
+              "purple"
+            ],
+            [
+              "shirt",
+              "red"
+            ],
+            [
+              "notebook",
+              "red"
+            ]
+          ],
+          "blind": [
+            [
+              "bucket",
+              "blue"
+            ],
+            [
+              "bench",
+              "purple"
+            ],
+            [
+              "shirt",
+              "red"
+            ],
+            [
+              "notebook",
+              "red"
+            ]
+          ],
+          "queries": [
+            "bucket",
+            "bench"
+          ],
+          "answers": [
+            "purple",
+            "blue",
+            "blue",
+            "purple"
+          ],
+          "predicted_colors": {
+            "teacher": [
+              "blue",
+              "blue",
+              "blue",
+              "blue"
+            ],
+            "local": [
+              "blue",
+              "red",
+              "blue",
+              "red"
+            ]
+          }
+        }
+      ],
+      "adapter_training_seed": null
+    }
+  ]
+}
