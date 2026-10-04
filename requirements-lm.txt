@@ -1,0 +1,4 @@
+# Optional; existing torch installation is retained.
+transformers==4.56.2
+huggingface-hub==0.35.3
+safetensors==0.8.0

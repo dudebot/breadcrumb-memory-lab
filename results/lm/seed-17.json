@@ -1,0 +1,636 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "seed": 17,
+  "steps_requested": 1000,
+  "batch_size": 8,
+  "eval_examples": 256,
+  "backbone_parameters": 134515008,
+  "trainable_parameters": 216128,
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "torch": "2.7.1+cu128",
+  "objective": "full-vocabulary forward KL; frozen backbone; four soft prefix embeddings",
+  "source_sha256": {
+    "lm_memory.py": "3b268fedccfdafda210ecd66892875335b365389d2086304f95be8bcd08818d9",
+    "lm_probe.py": "0eb3fff06c6a7b67b5788236e1e6c3009da49d497085bbbecd02a4b8413f88c8"
+  },
+  "steps_completed": 1000,
+  "frozen_backbone_verified": true,
+  "elapsed_seconds": 155.2182754999958,
+  "peak_cuda_allocated_bytes": 874414080,
+  "peak_cuda_reserved_bytes": 884998144,
+  "soft_memory_bytes_per_example": 9216,
+  "before": {
+    "examples": 256,
+    "records": 4,
+    "metrics": {
+      "teacher": {
+        "candidate_accuracy": 0.921875,
+        "raw_next_token_accuracy": 0.91796875,
+        "kl_to_teacher": -1.5066686995246492e-09
+      },
+      "local": {
+        "candidate_accuracy": 0.1171875,
+        "raw_next_token_accuracy": 0.1171875,
+        "kl_to_teacher": 1.2788029927760363
+      },
+      "student": {
+        "candidate_accuracy": 0.109375,
+        "raw_next_token_accuracy": 0.109375,
+        "kl_to_teacher": 1.4185777623206377
+      },
+      "zero_memory": {
+        "candidate_accuracy": 0.10546875,
+        "raw_next_token_accuracy": 0.10546875,
+        "kl_to_teacher": 1.3591994568705559
+      },
+      "shuffled_memory": {
+        "candidate_accuracy": 0.109375,
+        "raw_next_token_accuracy": 0.109375,
+        "kl_to_teacher": 1.4201756417751312
+      }
+    },
+    "mean_tokens": {
+      "old": 21.078125,
+      "local": 32.1171875,
+      "full": 50.1953125
+    },
+    "memory_slots": 4,
+    "samples": [
+      {
+        "facts": [
+          [
+            "lantern",
+            "yellow"
+          ],
+          [
+            "pencil",
+            "white"
+          ],
+          [
+            "plate",
+            "yellow"
+          ],
+          [
+            "shirt",
+            "green"
+          ]
+        ],
+        "query": "lantern",
+        "correct": "yellow",
+        "predictions": {
+          "teacher": "yellow",
+          "local": "green",
+          "student": "green",
+          "zero_memory": "green",
+          "shuffled_memory": "green"
+        },
+        "raw_next_tokens": {
+          "teacher": " yellow",
+          "local": " green",
+          "student": " green",
+          "zero_memory": " green",
+          "shuffled_memory": " green"
+        }
+      },
+      {
+        "facts": [
+          [
+            "umbrella",
+            "orange"
+          ],
+          [
+            "notebook",
+            "white"
+          ],
+          [
+            "coat",
+            "red"
+          ],
+          [
+            "bag",
+            "green"
+          ]
+        ],
+        "query": "umbrella",
+        "correct": "orange",
+        "predictions": {
+          "teacher": "orange",
+          "local": "green",
+          "student": "green",
+          "zero_memory": "green",
+          "shuffled_memory": "green"
+        },
+        "raw_next_tokens": {
+          "teacher": " orange",
+          "local": " green",
+          "student": " green",
+          "zero_memory": " green",
+          "shuffled_memory": " green"
+        }
+      },
+      {
+        "facts": [
+          [
+            "shirt",
+            "green"
+          ],
+          [
+            "hat",
+            "orange"
+          ],
+          [
+            "clock",
+            "red"
+          ],
+          [
+            "bag",
+            "purple"
+          ]
+        ],
+        "query": "shirt",
+        "correct": "green",
+        "predictions": {
+          "teacher": "green",
+          "local": "blue",
+          "student": "red",
+          "zero_memory": "red",
+          "shuffled_memory": "red"
+        },
+        "raw_next_tokens": {
+          "teacher": " green",
+          "local": " blue",
+          "student": " red",
+          "zero_memory": " red",
+          "shuffled_memory": " red"
+        }
+      },
+      {
+        "facts": [
+          [
+            "shirt",
+            "green"
+          ],
+          [
+            "shoe",
+            "blue"
+          ],
+          [
+            "car",
+            "yellow"
+          ],
+          [
+            "boat",
+            "black"
+          ]
+        ],
+        "query": "shirt",
+        "correct": "green",
+        "predictions": {
+          "teacher": "green",
+          "local": "blue",
+          "student": "blue",
+          "zero_memory": "blue",
+          "shuffled_memory": "blue"
+        },
+        "raw_next_tokens": {
+          "teacher": " green",
+          "local": " blue",
+          "student": " blue",
+          "zero_memory": " blue",
+          "shuffled_memory": " blue"
+        }
+      }
+    ]
+  },
+  "after": {
+    "examples": 256,
+    "records": 4,
+    "metrics": {
+      "teacher": {
+        "candidate_accuracy": 0.921875,
+        "raw_next_token_accuracy": 0.91796875,
+        "kl_to_teacher": -1.5066686995246492e-09
+      },
+      "local": {
+        "candidate_accuracy": 0.1171875,
+        "raw_next_token_accuracy": 0.1171875,
+        "kl_to_teacher": 1.2788029927760363
+      },
+      "student": {
+        "candidate_accuracy": 0.2421875,
+        "raw_next_token_accuracy": 0.234375,
+        "kl_to_teacher": 0.8029388207942247
+      },
+      "zero_memory": {
+        "candidate_accuracy": 0.10546875,
+        "raw_next_token_accuracy": 0.10546875,
+        "kl_to_teacher": 1.3591994568705559
+      },
+      "shuffled_memory": {
+        "candidate_accuracy": 0.125,
+        "raw_next_token_accuracy": 0.125,
+        "kl_to_teacher": 1.1157422345131636
+      }
+    },
+    "mean_tokens": {
+      "old": 21.078125,
+      "local": 32.1171875,
+      "full": 50.1953125
+    },
+    "memory_slots": 4,
+    "samples": [
+      {
+        "facts": [
+          [
+            "lantern",
+            "yellow"
+          ],
+          [
+            "pencil",
+            "white"
+          ],
+          [
+            "plate",
+            "yellow"
+          ],
+          [
+            "shirt",
+            "green"
+          ]
+        ],
+        "query": "lantern",
+        "correct": "yellow",
+        "predictions": {
+          "teacher": "yellow",
+          "local": "green",
+          "student": "blue",
+          "zero_memory": "green",
+          "shuffled_memory": "blue"
+        },
+        "raw_next_tokens": {
+          "teacher": " yellow",
+          "local": " green",
+          "student": " blue",
+          "zero_memory": " green",
+          "shuffled_memory": " blue"
+        }
+      },
+      {
+        "facts": [
+          [
+            "umbrella",
+            "orange"
+          ],
+          [
+            "notebook",
+            "white"
+          ],
+          [
+            "coat",
+            "red"
+          ],
+          [
+            "bag",
+            "green"
+          ]
+        ],
+        "query": "umbrella",
+        "correct": "orange",
+        "predictions": {
+          "teacher": "orange",
+          "local": "green",
+          "student": "blue",
+          "zero_memory": "green",
+          "shuffled_memory": "blue"
+        },
+        "raw_next_tokens": {
+          "teacher": " orange",
+          "local": " green",
+          "student": " blue",
+          "zero_memory": " green",
+          "shuffled_memory": " blue"
+        }
+      },
+      {
+        "facts": [
+          [
+            "shirt",
+            "green"
+          ],
+          [
+            "hat",
+            "orange"
+          ],
+          [
+            "clock",
+            "red"
+          ],
+          [
+            "bag",
+            "purple"
+          ]
+        ],
+        "query": "shirt",
+        "correct": "green",
+        "predictions": {
+          "teacher": "green",
+          "local": "blue",
+          "student": "blue",
+          "zero_memory": "red",
+          "shuffled_memory": "blue"
+        },
+        "raw_next_tokens": {
+          "teacher": " green",
+          "local": " blue",
+          "student": " blue",
+          "zero_memory": " red",
+          "shuffled_memory": " blue"
+        }
+      },
+      {
+        "facts": [
+          [
+            "shirt",
+            "green"
+          ],
+          [
+            "shoe",
+            "blue"
+          ],
+          [
+            "car",
+            "yellow"
+          ],
+          [
+            "boat",
+            "black"
+          ]
+        ],
+        "query": "shirt",
+        "correct": "green",
+        "predictions": {
+          "teacher": "green",
+          "local": "blue",
+          "student": "blue",
+          "zero_memory": "blue",
+          "shuffled_memory": "black"
+        },
+        "raw_next_tokens": {
+          "teacher": " green",
+          "local": " blue",
+          "student": " blue",
+          "zero_memory": " blue",
+          "shuffled_memory": " black"
+        }
+      }
+    ]
+  },
+  "longer_history": {
+    "examples": 256,
+    "records": 8,
+    "metrics": {
+      "teacher": {
+        "candidate_accuracy": 0.6328125,
+        "raw_next_token_accuracy": 0.6328125,
+        "kl_to_teacher": -1.4142417861795487e-09
+      },
+      "local": {
+        "candidate_accuracy": 0.1015625,
+        "raw_next_token_accuracy": 0.1015625,
+        "kl_to_teacher": 0.888956943526864
+      },
+      "student": {
+        "candidate_accuracy": 0.1484375,
+        "raw_next_token_accuracy": 0.14453125,
+        "kl_to_teacher": 0.6646900698542595
+      },
+      "zero_memory": {
+        "candidate_accuracy": 0.125,
+        "raw_next_token_accuracy": 0.125,
+        "kl_to_teacher": 0.9852125775068998
+      },
+      "shuffled_memory": {
+        "candidate_accuracy": 0.1328125,
+        "raw_next_token_accuracy": 0.125,
+        "kl_to_teacher": 0.7425642060115933
+      }
+    },
+    "mean_tokens": {
+      "old": 57.19921875,
+      "local": 32.11328125,
+      "full": 86.3125
+    },
+    "memory_slots": 4,
+    "samples": [
+      {
+        "facts": [
+          [
+            "lantern",
+            "white"
+          ],
+          [
+            "coat",
+            "orange"
+          ],
+          [
+            "table",
+            "green"
+          ],
+          [
+            "notebook",
+            "black"
+          ],
+          [
+            "book",
+            "orange"
+          ],
+          [
+            "lamp",
+            "blue"
+          ],
+          [
+            "pencil",
+            "purple"
+          ],
+          [
+            "box",
+            "black"
+          ]
+        ],
+        "query": "book",
+        "correct": "orange",
+        "predictions": {
+          "teacher": "blue",
+          "local": "black",
+          "student": "black",
+          "zero_memory": "black",
+          "shuffled_memory": "black"
+        },
+        "raw_next_tokens": {
+          "teacher": " blue",
+          "local": " black",
+          "student": " black",
+          "zero_memory": " black",
+          "shuffled_memory": " black"
+        }
+      },
+      {
+        "facts": [
+          [
+            "helmet",
+            "green"
+          ],
+          [
+            "basket",
+            "white"
+          ],
+          [
+            "shirt",
+            "purple"
+          ],
+          [
+            "coat",
+            "blue"
+          ],
+          [
+            "clock",
+            "blue"
+          ],
+          [
+            "umbrella",
+            "orange"
+          ],
+          [
+            "door",
+            "yellow"
+          ],
+          [
+            "notebook",
+            "white"
+          ]
+        ],
+        "query": "clock",
+        "correct": "blue",
+        "predictions": {
+          "teacher": "blue",
+          "local": "blue",
+          "student": "blue",
+          "zero_memory": "blue",
+          "shuffled_memory": "blue"
+        },
+        "raw_next_tokens": {
+          "teacher": " blue",
+          "local": " blue",
+          "student": " blue",
+          "zero_memory": " blue",
+          "shuffled_memory": " blue"
+        }
+      },
+      {
+        "facts": [
+          [
+            "notebook",
+            "white"
+          ],
+          [
+            "door",
+            "yellow"
+          ],
+          [
+            "pencil",
+            "red"
+          ],
+          [
+            "bottle",
+            "purple"
+          ],
+          [
+            "umbrella",
+            "red"
+          ],
+          [
+            "chair",
+            "purple"
+          ],
+          [
+            "clock",
+            "orange"
+          ],
+          [
+            "fence",
+            "orange"
+          ]
+        ],
+        "query": "pencil",
+        "correct": "red",
+        "predictions": {
+          "teacher": "yellow",
+          "local": "orange",
+          "student": "orange",
+          "zero_memory": "orange",
+          "shuffled_memory": "orange"
+        },
+        "raw_next_tokens": {
+          "teacher": " yellow",
+          "local": " orange",
+          "student": " orange",
+          "zero_memory": " orange",
+          "shuffled_memory": " orange"
+        }
+      },
+      {
+        "facts": [
+          [
+            "coat",
+            "yellow"
+          ],
+          [
+            "table",
+            "green"
+          ],
+          [
+            "ribbon",
+            "white"
+          ],
+          [
+            "ball",
+            "white"
+          ],
+          [
+            "kite",
+            "green"
+          ],
+          [
+            "book",
+            "red"
+          ],
+          [
+            "cup",
+            "green"
+          ],
+          [
+            "basket",
+            "yellow"
+          ]
+        ],
+        "query": "ball",
+        "correct": "white",
+        "predictions": {
+          "teacher": "green",
+          "local": "green",
+          "student": "green",
+          "zero_memory": "green",
+          "shuffled_memory": "green"
+        },
+        "raw_next_tokens": {
+          "teacher": " green",
+          "local": " green",
+          "student": " green",
+          "zero_memory": " green",
+          "shuffled_memory": " green"
+        }
+      }
+    ]
+  }
+}

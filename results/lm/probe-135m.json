@@ -1,0 +1,179 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "parameter_count": 134515008,
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "torch": "2.7.1+cu128",
+  "elapsed_seconds_including_load": 20.259641399839893,
+  "peak_cuda_allocated_bytes": 624477184,
+  "results": [
+    {
+      "style": "sentences",
+      "records": 4,
+      "examples": 32,
+      "full_context_candidate_accuracy": 0.96875,
+      "full_context_raw_token_accuracy": 0.96875,
+      "local_candidate_accuracy": 0.0625,
+      "samples": [
+        {
+          "prompt": "Facts:\nThe color of the boat is yellow.\nThe color of the ribbon is orange.\nThe color of the shirt is orange.\nThe color of the kite is purple.\nAccording to the facts, the color of the boat is",
+          "answer": "yellow",
+          "candidate_prediction": "yellow",
+          "raw_next_token": " yellow"
+        },
+        {
+          "prompt": "Facts:\nThe color of the ribbon is green.\nThe color of the shoe is purple.\nThe color of the pencil is yellow.\nThe color of the bench is black.\nAccording to the facts, the color of the ribbon is",
+          "answer": "green",
+          "candidate_prediction": "green",
+          "raw_next_token": " green"
+        },
+        {
+          "prompt": "Facts:\nThe color of the chair is black.\nThe color of the pencil is orange.\nThe color of the book is orange.\nThe color of the bag is orange.\nAccording to the facts, the color of the pencil is",
+          "answer": "orange",
+          "candidate_prediction": "orange",
+          "raw_next_token": " orange"
+        }
+      ]
+    },
+    {
+      "style": "sentences",
+      "records": 8,
+      "examples": 32,
+      "full_context_candidate_accuracy": 0.625,
+      "full_context_raw_token_accuracy": 0.625,
+      "local_candidate_accuracy": 0.0,
+      "samples": [
+        {
+          "prompt": "Facts:\nThe color of the pencil is orange.\nThe color of the lantern is yellow.\nThe color of the shirt is yellow.\nThe color of the boat is red.\nThe color of the kite is red.\nThe color of the door is blue.\nThe color of the cup is orange.\nThe color of the umbrella is red.\nAccording to the facts, the color of the boat is",
+          "answer": "red",
+          "candidate_prediction": "red",
+          "raw_next_token": " red"
+        },
+        {
+          "prompt": "Facts:\nThe color of the bicycle is white.\nThe color of the notebook is yellow.\nThe color of the lamp is purple.\nThe color of the chair is white.\nThe color of the box is purple.\nThe color of the table is black.\nThe color of the coat is black.\nThe color of the kite is red.\nAccording to the facts, the color of the box is",
+          "answer": "purple",
+          "candidate_prediction": "purple",
+          "raw_next_token": " purple"
+        },
+        {
+          "prompt": "Facts:\nThe color of the ribbon is purple.\nThe color of the chair is white.\nThe color of the helmet is black.\nThe color of the box is blue.\nThe color of the hat is black.\nThe color of the plate is yellow.\nThe color of the car is blue.\nThe color of the shoe is blue.\nAccording to the facts, the color of the chair is",
+          "answer": "white",
+          "candidate_prediction": "white",
+          "raw_next_token": " white"
+        }
+      ]
+    },
+    {
+      "style": "sentences",
+      "records": 16,
+      "examples": 32,
+      "full_context_candidate_accuracy": 0.40625,
+      "full_context_raw_token_accuracy": 0.40625,
+      "local_candidate_accuracy": 0.0625,
+      "samples": [
+        {
+          "prompt": "Facts:\nThe color of the box is red.\nThe color of the plate is blue.\nThe color of the door is blue.\nThe color of the helmet is black.\nThe color of the boat is blue.\nThe color of the umbrella is purple.\nThe color of the basket is red.\nThe color of the car is purple.\nThe color of the vase is white.\nThe color of the clock is yellow.\nThe color of the coat is orange.\nThe color of the ball is black.\nThe color of the shoe is white.\nThe color of the book is white.\nThe color of the bag is orange.\nThe color of the ribbon is blue.\nAccording to the facts, the color of the ball is",
+          "answer": "black",
+          "candidate_prediction": "blue",
+          "raw_next_token": " blue"
+        },
+        {
+          "prompt": "Facts:\nThe color of the kite is orange.\nThe color of the notebook is blue.\nThe color of the clock is orange.\nThe color of the helmet is purple.\nThe color of the cup is blue.\nThe color of the fence is orange.\nThe color of the bag is purple.\nThe color of the bottle is orange.\nThe color of the boat is black.\nThe color of the shoe is orange.\nThe color of the ball is purple.\nThe color of the bucket is red.\nThe color of the lantern is yellow.\nThe color of the hat is green.\nThe color of the basket is red.\nThe color of the ribbon is blue.\nAccording to the facts, the color of the bucket is",
+          "answer": "red",
+          "candidate_prediction": "blue",
+          "raw_next_token": " blue"
+        },
+        {
+          "prompt": "Facts:\nThe color of the fence is purple.\nThe color of the book is orange.\nThe color of the bottle is orange.\nThe color of the scarf is yellow.\nThe color of the box is black.\nThe color of the umbrella is black.\nThe color of the boat is red.\nThe color of the shoe is red.\nThe color of the bag is green.\nThe color of the kite is purple.\nThe color of the bench is purple.\nThe color of the clock is white.\nThe color of the pencil is yellow.\nThe color of the ribbon is black.\nThe color of the shirt is purple.\nThe color of the cup is purple.\nAccording to the facts, the color of the bag is",
+          "answer": "green",
+          "candidate_prediction": "blue",
+          "raw_next_token": " blue"
+        }
+      ]
+    },
+    {
+      "style": "mapping",
+      "records": 4,
+      "examples": 32,
+      "full_context_candidate_accuracy": 0.6875,
+      "full_context_raw_token_accuracy": 0.6875,
+      "local_candidate_accuracy": 0.09375,
+      "samples": [
+        {
+          "prompt": "Color assignments:\nboat: yellow\nribbon: orange\nshirt: orange\nkite: purple\n\nRepeat the assigned color.\nboat:",
+          "answer": "yellow",
+          "candidate_prediction": "yellow",
+          "raw_next_token": " yellow"
+        },
+        {
+          "prompt": "Color assignments:\nribbon: green\nshoe: purple\npencil: yellow\nbench: black\n\nRepeat the assigned color.\nribbon:",
+          "answer": "green",
+          "candidate_prediction": "green",
+          "raw_next_token": " green"
+        },
+        {
+          "prompt": "Color assignments:\nchair: black\npencil: orange\nbook: orange\nbag: orange\n\nRepeat the assigned color.\npencil:",
+          "answer": "orange",
+          "candidate_prediction": "orange",
+          "raw_next_token": " orange"
+        }
+      ]
+    },
+    {
+      "style": "mapping",
+      "records": 8,
+      "examples": 32,
+      "full_context_candidate_accuracy": 0.59375,
+      "full_context_raw_token_accuracy": 0.59375,
+      "local_candidate_accuracy": 0.09375,
+      "samples": [
+        {
+          "prompt": "Color assignments:\npencil: orange\nlantern: yellow\nshirt: yellow\nboat: red\nkite: red\ndoor: blue\ncup: orange\numbrella: red\n\nRepeat the assigned color.\nboat:",
+          "answer": "red",
+          "candidate_prediction": "orange",
+          "raw_next_token": " orange"
+        },
+        {
+          "prompt": "Color assignments:\nbicycle: white\nnotebook: yellow\nlamp: purple\nchair: white\nbox: purple\ntable: black\ncoat: black\nkite: red\n\nRepeat the assigned color.\nbox:",
+          "answer": "purple",
+          "candidate_prediction": "blue",
+          "raw_next_token": " blue"
+        },
+        {
+          "prompt": "Color assignments:\nribbon: purple\nchair: white\nhelmet: black\nbox: blue\nhat: black\nplate: yellow\ncar: blue\nshoe: blue\n\nRepeat the assigned color.\nchair:",
+          "answer": "white",
+          "candidate_prediction": "blue",
+          "raw_next_token": " blue"
+        }
+      ]
+    },
+    {
+      "style": "mapping",
+      "records": 16,
+      "examples": 32,
+      "full_context_candidate_accuracy": 0.40625,
+      "full_context_raw_token_accuracy": 0.40625,
+      "local_candidate_accuracy": 0.15625,
+      "samples": [
+        {
+          "prompt": "Color assignments:\nbox: red\nplate: blue\ndoor: blue\nhelmet: black\nboat: blue\numbrella: purple\nbasket: red\ncar: purple\nvase: white\nclock: yellow\ncoat: orange\nball: black\nshoe: white\nbook: white\nbag: orange\nribbon: blue\n\nRepeat the assigned color.\nball:",
+          "answer": "black",
+          "candidate_prediction": "blue",
+          "raw_next_token": " blue"
+        },
+        {
+          "prompt": "Color assignments:\nkite: orange\nnotebook: blue\nclock: orange\nhelmet: purple\ncup: blue\nfence: orange\nbag: purple\nbottle: orange\nboat: black\nshoe: orange\nball: purple\nbucket: red\nlantern: yellow\nhat: green\nbasket: red\nribbon: blue\n\nRepeat the assigned color.\nbucket:",
+          "answer": "red",
+          "candidate_prediction": "green",
+          "raw_next_token": " green"
+        },
+        {
+          "prompt": "Color assignments:\nfence: purple\nbook: orange\nbottle: orange\nscarf: yellow\nbox: black\numbrella: black\nboat: red\nshoe: red\nbag: green\nkite: purple\nbench: purple\nclock: white\npencil: yellow\nribbon: black\nshirt: purple\ncup: purple\n\nRepeat the assigned color.\nbag:",
+          "answer": "green",
+          "candidate_prediction": "green",
+          "raw_next_token": " green"
+        }
+      ]
+    }
+  ]
+}

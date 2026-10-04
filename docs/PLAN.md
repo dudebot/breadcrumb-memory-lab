@@ -37,7 +37,9 @@ Pre-register sizes, seeds and a final held-out seed set before selecting variant
 
 Time budget: a bounded local work session with a fixed experiment list, not a large sweep. If the simple keyed retrieval baseline is all the intended application needs, stop and use it.
 
-## Stage 2 — frozen small language model (not implemented)
+## Stage 2 — frozen small language model (initial bridge implemented)
+
+An initial `lm_memory` experiment now uses frozen SmolLM2-135M-Instruct plus a learned four-vector compressor, on four-fact color recall. It is a single-prefix test, not yet a recurrent writer or the full benchmark below. The backbone remains frozen, and training targets are full-vocabulary teacher distributions. See LM_RESULTS.md for measured outcomes and constraints. The proposed breadth, repeated updates and efficiency controls below remain outstanding.
 
 Choose a 100–500M causal language model with accessible weights, documented licensing, standard PyTorch support and a demonstrated ability to solve the test prompts. Pin model revision and tokenizer. Confirm the full-context teacher solves the tasks **before** interpreting a compressed student's loss.
 
@@ -49,7 +51,7 @@ Benchmarks should include randomized names/values, delayed questions, multiple s
 
 Required baselines: full context, local window, raw recent-token storage at equal bytes, simple textual summary, ordinary retrieval, oracle evidence retrieval, untrained adapter, disabled memory and shuffled memory. Include at least one suitable published learned-compression baseline before making a research claim.
 
-First run: at most 100 measured training steps and a small held-out evaluation. Record steps/second, peak allocated/reserved memory, driver/device, exact configuration and target quality. Use those measurements to estimate the next bounded run. Aim below 6 GB additional allocation on the initially observed machine; stop on OOM rather than evicting other GPU users or modifying their processes.
+The first bridge run logged timing every 50 steps and completed 1,000 steps under a 15-minute cap after passing a 256-example teacher gate. Record steps/second, peak allocated/reserved memory, device, exact configuration and target quality for later variants. Aim below 6 GiB of PyTorch allocation on the initially observed machine; stop on OOM rather than evicting other GPU users or modifying their processes.
 
 A negative result here could reflect an inadequate interface, teacher or training procedure. Report which control failed instead of concluding that all compressed memory is impossible.
 
